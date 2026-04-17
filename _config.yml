@@ -1,0 +1,30 @@
+title: ABOKA IT Consult
+name: ABOKA IT Consult
+role: Senior Backend Specialist
+description: Freelance IT consultancy focused on backend architecture, performance, and scalable cloud systems.
+url: https://abokait.com
+baseurl: ""
+
+keywords:
+  - Python
+  - FastAPI
+  - SQLAlchemy
+  - AWS
+
+collections:
+  projects:
+    output: true
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
