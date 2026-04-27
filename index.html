@@ -3,79 +3,222 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ABOKA IT — Senior Backend Engineering & Cloud Architecture</title>
-    <meta name="description" content="Senior Software Engineer specializing in high-performance Python backends, FastAPI modernization, and CDKTF Infrastructure as Code." />
+    <title>ABOKA IT Consult — Building Robust & Performance-Driven Software</title>
+    <meta name="description" content="Senior software engineering with Python, FastAPI, and Infrastructure as Code. Backend modernization, performance engineering, and type-safe reliability." />
     <meta name="author" content="ABOKA IT Consult" />
     <link rel="canonical" href="https://abokait.com" />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://abokait.com" />
+    <meta property="og:title" content="ABOKA IT Consult — Building Robust & Performance-Driven Software" />
+    <meta property="og:description" content="Senior software engineering with Python, FastAPI, and Infrastructure as Code. Backend modernization, performance engineering, and type-safe reliability." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ABOKA IT Consult — Building Robust & Performance-Driven Software" />
+    <meta name="twitter:description" content="Senior software engineering with Python, FastAPI, and Infrastructure as Code. Backend modernization, performance engineering, and type-safe reliability." />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "ABOKA IT Consult",
+      "url": "https://abokait.com",
+      "email": "info @ abokait.com",
+      "description": "Senior software engineering with Python, FastAPI, and Infrastructure as Code. Backend modernization, performance engineering, and type-safe reliability."
+    }
+    </script>
+
     <style>
       :root {
-        --hero: hsl(215 40% 12%);
-        --hero-fg: hsl(0 0% 100%);
-        --hero-muted: hsl(215 15% 70%);
-        --bg: hsl(0 0% 100%);
-        --fg: hsl(215 40% 12%);
-        --muted-fg: hsl(215 15% 40%);
-        --section-alt: hsl(215 25% 97%);
+        --background: hsl(210 20% 98%);
+        --foreground: hsl(220 30% 15%);
         --card: hsl(0 0% 100%);
-        --border: hsl(215 20% 90%);
-        --accent: hsl(210 95% 55%);
+        --secondary: hsl(210 20% 95%);
+        --muted-fg: hsl(215 15% 50%);
+        --primary: hsl(215 50% 18%);
+        --primary-fg: hsl(210 20% 98%);
+        --accent: hsl(175 60% 40%);
         --accent-fg: hsl(0 0% 100%);
-        --radius: 8px;
+        --border: hsl(214 20% 88%);
+        --radius: 0.75rem;
       }
+
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
-      body { margin: 0; font-family: "Inter", sans-serif; color: var(--fg); background: var(--bg); line-height: 1.55; -webkit-font-smoothing: antialiased; }
-      .container { width: min(100% - 2rem, 1100px); margin: 0 auto; }
-      .site-header { position: fixed; inset: 0 0 auto 0; background: hsl(215 40% 12% / 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid hsl(215 15% 70% / 0.2); z-index: 50; }
-      .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-      .brand { color: var(--hero-fg); font-weight: 600; font-size: 1.25rem; }
-      .nav-links { display: none; gap: 2rem; }
-      .nav-links a { color: var(--hero-muted); font-size: 0.875rem; transition: color .2s; }
-      .nav-links a:hover { color: var(--hero-fg); }
-      .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem 1.1rem; border-radius: var(--radius); font-size: .875rem; font-weight: 500; cursor: pointer; transition: opacity .2s; }
+      body {
+        margin: 0;
+        font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+        color: var(--foreground);
+        background: var(--background);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.15; margin: 0; font-weight: 700; }
+      p { margin: 0; }
+      ul { margin: 0; padding: 0; list-style: none; }
+
+      .container { width: min(100% - 3rem, 1100px); margin: 0 auto; }
+
+      .text-gradient {
+        background-image: linear-gradient(135deg, var(--accent) 0%, hsl(175 50% 55%) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin: 0 0 0.85rem;
+      }
+
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+        padding: 0.85rem 1.75rem; border-radius: var(--radius);
+        font-size: 0.95rem; font-weight: 500; cursor: pointer;
+        transition: opacity 0.2s, background-color 0.2s, border-color 0.2s;
+        border: 1px solid transparent;
+      }
+      .btn-primary { background: var(--primary); color: var(--primary-fg); }
+      .btn-primary:hover { opacity: 0.9; }
       .btn-accent { background: var(--accent); color: var(--accent-fg); }
-      .btn-outline { border: 1px solid hsl(215 15% 70% / 0.3); color: var(--hero-fg); }
-      @media (min-width: 768px) { .nav-links { display: flex; } }
-      .hero { background: var(--hero); padding: 8rem 0 6rem; }
-      .hero-inner { max-width: 750px; }
-      .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 1rem; }
-      .hero h1 { color: var(--hero-fg); font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 1.5rem; }
-      .hero p { color: var(--hero-muted); font-size: 1.125rem; margin-bottom: 2.5rem; line-height: 1.6; }
+      .btn-accent:hover { opacity: 0.9; }
+      .btn-outline { border-color: var(--border); color: var(--foreground); background: transparent; }
+      .btn-outline:hover { background: var(--secondary); }
+      .btn-outline-light {
+        border-color: hsl(0 0% 100% / 0.2); color: var(--primary-fg); background: transparent;
+      }
+      .btn-outline-light:hover { background: hsl(0 0% 100% / 0.1); }
+
+      .site-header {
+        position: fixed; inset: 0 0 auto 0;
+        background: hsl(0 0% 100% / 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        z-index: 50;
+      }
+      .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+      .brand { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+      .nav-links { display: none; align-items: center; gap: 2rem; }
+      .nav-links a { color: var(--muted-fg); font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+      .nav-links a:hover { color: var(--foreground); }
+      .nav-links .btn { padding: 0.5rem 1.25rem; font-size: 0.875rem; }
+      .nav-toggle { display: inline-flex; background: transparent; border: 0; color: var(--foreground); cursor: pointer; padding: 0.25rem; }
+      .mobile-menu { display: none; background: var(--card); border-bottom: 1px solid var(--border); padding: 0.5rem 1.5rem 1rem; }
+      .mobile-menu.open { display: block; }
+      .mobile-menu a { display: block; padding: 0.6rem 0; color: var(--muted-fg); font-size: 0.9rem; font-weight: 500; }
+      .mobile-menu a.btn { text-align: center; color: var(--accent-fg); margin-top: 0.5rem; }
+      @media (min-width: 768px) {
+        .nav-links { display: flex; }
+        .nav-toggle { display: none; }
+        .mobile-menu { display: none !important; }
+      }
+
+      .hero { position: relative; overflow: hidden; padding: 8rem 0 5rem; }
+      @media (min-width: 768px) { .hero { padding: 11rem 0 8rem; } }
+      .hero::before {
+        content: ""; position: absolute; top: -250px; right: -150px;
+        width: 500px; height: 500px; border-radius: 50%;
+        background: hsl(175 60% 40% / 0.1); filter: blur(80px); pointer-events: none;
+      }
+      .hero-inner { position: relative; max-width: 640px; }
+      .hero h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); margin-bottom: 1.5rem; }
+      .hero p.lead { font-size: 1.125rem; color: var(--muted-fg); max-width: 32rem; margin-bottom: 2.5rem; }
+      .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
+
       section.block { padding: 5rem 0; }
-      .alt { background: var(--section-alt); }
-      .section-head { max-width: 700px; margin-bottom: 3.5rem; }
+      @media (min-width: 768px) { section.block { padding: 7rem 0; } }
+      .alt { background: hsl(210 20% 95% / 0.5); }
+
+      .section-eyebrow-block { max-width: 42rem; margin-bottom: 3rem; }
+      .section-eyebrow-block h2 { font-size: clamp(1.875rem, 3vw, 2.25rem); margin-bottom: 1rem; }
+      .section-eyebrow-block p { color: var(--muted-fg); }
+
       .grid { display: grid; gap: 1.5rem; }
-      @media (min-width: 768px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
-      .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
-      .card svg { color: var(--accent); width: 32px; height: 32px; margin-bottom: 1.25rem; }
-      .about-grid { display: grid; gap: 4rem; align-items: center; }
-      @media (min-width: 768px) { .about-grid { grid-template-columns: 1fr 1fr; } }
-      .about-card { background: var(--section-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; }
-      .about-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
-      .about-card li { display: flex; gap: .75rem; color: var(--muted-fg); }
-      .about-card li::before { content: ""; flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: .55rem; }
-      .contact { background: var(--hero); text-align: center; padding: 5rem 0; }
-      .contact h2 { color: var(--hero-fg); margin-bottom: 1rem; }
-      .contact p { color: var(--hero-muted); margin-bottom: 2rem; }
-      footer { background: var(--hero); border-top: 1px solid hsl(215 15% 70% / 0.2); padding: 2rem 0; color: var(--hero-muted); text-align: center; font-size: 0.875rem; }
+      @media (min-width: 640px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.75rem;
+        transition: box-shadow 0.3s, transform 0.3s;
+      }
+      .card:hover { box-shadow: 0 10px 25px hsl(220 30% 15% / 0.08); transform: translateY(-4px); }
+      .card .icon {
+        width: 44px; height: 44px; border-radius: 0.6rem;
+        background: hsl(175 60% 40% / 0.1);
+        display: inline-flex; align-items: center; justify-content: center;
+        margin-bottom: 1rem; color: var(--accent);
+      }
+      .card h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+      .card p { color: var(--muted-fg); font-size: 0.925rem; }
+
+      .prose-block { max-width: 38rem; }
+      .prose-block h2 { font-size: clamp(1.875rem, 3vw, 2.25rem); margin-bottom: 1.5rem; }
+      .prose-block p { color: var(--muted-fg); }
+      .prose-block p + p { margin-top: 1rem; }
+
+      .split-grid { display: grid; gap: 3rem; align-items: start; }
+      @media (min-width: 768px) { .split-grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+      .stack-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
+      .stack-card h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 1.5rem; }
+      .stack-card ul { display: flex; flex-direction: column; gap: 1rem; }
+      .stack-card li { display: flex; gap: 0.75rem; color: var(--muted-fg); }
+      .stack-card li::before { content: ""; flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 0.55rem; }
+      .stack-card li strong { color: var(--foreground); font-weight: 600; }
+
+      .contact { background: var(--primary); color: var(--primary-fg); text-align: center; }
+      .contact .icon-circle {
+        width: 56px; height: 56px; border-radius: 50%;
+        background: hsl(175 60% 40% / 0.2);
+        display: inline-flex; align-items: center; justify-content: center;
+        color: var(--accent); margin: 0 auto 1.5rem;
+      }
+      .contact h2 { font-size: clamp(1.875rem, 3vw, 2.25rem); margin-bottom: 1rem; }
+      .contact p.lead { color: hsl(0 0% 100% / 0.7); max-width: 30rem; margin: 0 auto 2rem; }
+      .contact-cta { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+      footer {
+        background: var(--primary); color: hsl(0 0% 100% / 0.6);
+        border-top: 1px solid hsl(0 0% 100% / 0.1);
+        padding: 1.75rem 0; font-size: 0.875rem;
+      }
+      .foot { display: flex; flex-direction: column; gap: 0.5rem; align-items: center; justify-content: space-between; text-align: center; }
+      @media (min-width: 640px) { .foot { flex-direction: row; text-align: left; } }
     </style>
   </head>
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a href="#" class="brand">ABOKA <span>IT Consult</span></a>
-        <nav class="nav-links">
-          <a href="#engineering">Engineering</a>
-          <a href="#dev-culture">Development Culture</a>
+        <a href="#" class="brand">ABOKA <span class="text-gradient">IT Consult</span></a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#services">Expertise</a>
+          <a href="#about">Process</a>
           <a href="#stack">Stack</a>
           <a href="#contact">Contact</a>
+          <a href="#contact" class="btn btn-accent">Get in Touch</a>
         </nav>
-        <a href="#contact" class="btn btn-accent">Available for Projects</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg id="iconMenu" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="iconClose" style="display:none" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#services">Expertise</a>
+        <a href="#about">Process</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-accent">Get in Touch</a>
       </div>
     </header>
 
@@ -84,85 +227,77 @@
         <div class="container">
           <div class="hero-inner">
             <p class="eyebrow">Senior Software Engineer</p>
-            <h1>Building Robust & Performance-Driven Software</h1>
-            <p>I specialize in engineering high-quality backend systems with <strong>Python</strong> and <strong>FastAPI</strong>. From modernizing legacy codebases to defining <strong>Infrastructure as Code</strong>, I focus on writing clean, maintainable, and scalable software.</p>
+            <h1>Building robust &amp; <span class="text-gradient">performance-driven software</span></h1>
+            <p class="lead">I specialize in engineering high-quality backend systems with Python and FastAPI. From modernizing legacy codebases to defining Infrastructure as Code, I focus on writing clean, maintainable, and scalable software.</p>
             <div class="hero-cta">
-              <a href="#engineering" class="btn btn-accent btn-lg">Expertise & Services</a>
-              <a href="https://www.linkedin.com/in/andreasbokandersen/" target="_blank" class="btn btn-outline btn-lg">LinkedIn Profile</a>
+              <a href="#services" class="btn btn-primary">
+                Expertise &amp; Services
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/andreasbokandersen/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn Profile</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="engineering" class="block alt">
+      <section id="services" class="block alt">
         <div class="container">
-          <div class="section-head">
+          <div class="section-eyebrow-block">
             <p class="eyebrow">Core Expertise</p>
             <h2>Software Engineering</h2>
             <p>Dedicated to technical excellence, I implement systems that prioritize performance, type-safety, and automated scalability.</p>
           </div>
           <div class="grid grid-2">
             <article class="card">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
               <h3>Backend Modernization</h3>
-              <p>Specialized in refactoring monolithic Python codebases into modern <strong>FastAPI</strong> environments. I leverage <strong>SQLAlchemy 2.0</strong> to build type-safe, asynchronous database layers that reduce technical debt.</p>
+              <p>Refactoring monolithic Python codebases into modern FastAPI environments. I leverage SQLAlchemy 2.0 to build type-safe, asynchronous database layers that reduce technical debt.</p>
             </article>
             <article class="card">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 1 0-1.5-8.74A6 6 0 0 0 4 11.5a4.5 4.5 0 0 0 .5 9z"/></svg></span>
               <h3>Programmable Infrastructure</h3>
-              <p>Infrastructure as code delivered through <strong>CDKTF (Cloud Development Kit for Terraform)</strong>. I use Python to manage <strong>EC2, ECR, and SSM</strong>, ensuring infrastructure is as testable as the application code.</p>
+              <p>Infrastructure as Code delivered through CDKTF (Cloud Development Kit for Terraform). I use Python to manage EC2, ECR, and SSM, ensuring infrastructure is as testable as the application code.</p>
             </article>
             <article class="card">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
               <h3>Performance Engineering</h3>
-              <p>Optimizing critical paths in high-throughput backends. I utilize <strong>asynchronous IO</strong> and event-driven patterns with <strong>AWS SQS</strong> to ensure systems remain responsive under heavy loads.</p>
+              <p>Optimizing critical paths in high-throughput backends. I utilize asynchronous IO and event-driven patterns with AWS SQS to ensure systems remain responsive under heavy loads.</p>
             </article>
             <article class="card">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5 .5A9 9 0 1111.3 3c3.4 0 6.5 2 7.7 5.2"/></svg>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
               <h3>Type-Safe Reliability</h3>
-              <p>Building for reliability through strict <strong>Pydantic V2</strong> validation, comprehensive type-hinting, and <strong>BDD-driven</strong> testing (Gherkin/Behave) to bridge the gap between requirements and code.</p>
+              <p>Building for reliability through strict Pydantic V2 validation, comprehensive type-hinting, and BDD-driven testing (Gherkin/Behave) to bridge the gap between requirements and code.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="dev-culture" class="block">
+      <section id="about" class="block">
         <div class="container">
-          <div class="about-grid">
-            <div class="about-text">
-              <p class="eyebrow">Process & Collaboration</p>
-              <h2 style="font-size: clamp(1.875rem, 3vw, 2.25rem); font-weight: 700; margin-bottom: 1.5rem;">Agile Development at Scale</h2>
-              <p>Technical skills are most valuable when integrated into a strong development culture. I have extensive experience working within <strong>Agile</strong> and <strong>SAFe</strong> frameworks, contributing to high-performing teams and Release Trains.</p>
-              <p>I am an active participant in <strong>Communities of Practice</strong>, focusing on knowledge sharing, code reviews, and establishing engineering standards that elevate the entire team's output.</p>
-            </div>
-            <aside class="about-card">
-              <h3>Development Skills</h3>
-              <ul>
-                <li><strong>Methodologies:</strong> Agile, Scrum, SAFe</li>
-                <li><strong>Testing:</strong> BDD (Behave), Pytest-Asyncio</li>
-                <li><strong>Collaboration:</strong> Technical Mentoring, Code Review</li>
-                <li><strong>Analysis:</strong> Requirement Refinement, Tech-Debt Audits</li>
-              </ul>
-            </aside>
+          <div class="prose-block">
+            <p class="eyebrow">Process &amp; Collaboration</p>
+            <h2>Agile development at scale</h2>
+            <p>Technical skills are most valuable when integrated into a strong development culture. I have extensive experience working within Agile and SAFe frameworks, contributing to high-performing teams and Release Trains.</p>
+            <p>I am an active participant in Communities of Practice, focusing on knowledge sharing, code reviews, and establishing engineering standards that elevate the entire team's output.</p>
           </div>
         </div>
       </section>
 
       <section id="stack" class="block alt">
         <div class="container">
-          <div class="about-grid">
-            <aside class="about-card">
+          <div class="split-grid">
+            <aside class="stack-card">
               <h3>2026 Engineering Stack</h3>
               <ul>
-                <li><strong>Backend:</strong> Python, FastAPI, Pydantic</li>
-                <li><strong>Data:</strong> SQLAlchemy 2.0, PostgreSQL, Redis</li>
-                <li><strong>Cloud:</strong> CDKTF, AWS (EC2, ECR, SSM, S3)</li>
-                <li><strong>Tooling:</strong> Docker, GitHub Actions, Ruff, Alembic, uv, mypy</li>
+                <li><span><strong>Backend:</strong> Python, FastAPI, Pydantic</span></li>
+                <li><span><strong>Data:</strong> SQLAlchemy 2.0, PostgreSQL, Redis</span></li>
+                <li><span><strong>Cloud:</strong> CDKTF, AWS (EC2, ECR, SSM, S3)</span></li>
+                <li><span><strong>Tooling:</strong> Docker, GitHub Actions, Ruff, Alembic, uv, mypy</span></li>
               </ul>
             </aside>
-            <div class="about-text">
+            <div class="prose-block">
               <p class="eyebrow">Specialization</p>
-              <h2 style="font-size: clamp(1.875rem, 3vw, 2.25rem); font-weight: 700; margin-bottom: 1.5rem;">State-of-the-Art Implementation</h2>
+              <h2>State-of-the-art implementation</h2>
               <p>I stay at the forefront of the Python ecosystem, ensuring that the software I build is not only performant today but maintainable for years to come.</p>
               <p>By treating infrastructure as software and applying rigorous engineering standards, I help teams deliver stable, auditable, and high-quality digital products.</p>
             </div>
@@ -172,25 +307,53 @@
 
       <section id="contact" class="block contact">
         <div class="container">
+          <span class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
           <p class="eyebrow">Get in Touch</p>
-          <h2>Ready to scale your next project?</h2>
-          <p>Available for senior software engineering engagements and technical backend advisory.</p>
+          <h2>Let's discuss your project</h2>
+          <p class="lead">Available for senior software engineering engagements and technical backend advisory.</p>
           <div class="contact-cta">
-            <a href="" class="btn btn-outline btn-lg">info@abokait.com</a>
-            <a href="https://www.linkedin.com/in/andreasbokandersen/" target="_blank" class="btn btn-outline btn-lg">LinkedIn Profile</a>
+            <a href="mailto:info(at}abokait.com" class="btn btn-accent">
+              info(at)abokait.com
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/andreasbokandersen/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn Profile
+            </a>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="container">
-        <p>© <span id="year"></span> ABOKA IT Consult &middot; CVR: 31462193 &middot; Based in Denmark &middot; All rights reserved.</p>
+      <div class="container foot">
+        <p>© <span id="year"></span> ABOKA IT Consult. CVR 31462193. All rights reserved.</p>
+
       </div>
     </footer>
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      (function () {
+        var btn = document.getElementById('navToggle');
+        var menu = document.getElementById('mobileMenu');
+        var iMenu = document.getElementById('iconMenu');
+        var iClose = document.getElementById('iconClose');
+        btn.addEventListener('click', function () {
+          var open = menu.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          iMenu.style.display = open ? 'none' : '';
+          iClose.style.display = open ? '' : 'none';
+        });
+        menu.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            menu.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+            iMenu.style.display = '';
+            iClose.style.display = 'none';
+          });
+        });
+      })();
+      document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
